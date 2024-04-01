@@ -40,8 +40,8 @@ const HospitalCard: React.FC<HospitalType> = ({ _id, address, availability, phot
         <div className='flex flex-col mt-9 w-full pr-4 items-center space-y-4'>
             <div className='flex w-full  items-center'>
             <div className='flex flex-col grow'>
-                <p className='text-primary text-sm font-light'>address</p>
-                <p className='text-2xl font-bold'>{}</p>
+                <p className='text-primary text-sm font-light'>{Object.values(address).join(", ")}</p>
+                <p className='text-2xl font-bold'>{_id}</p>
                 <p className='text-sm font-light'>distance</p>
             </div>
             <div className='rounded-full max-h-6 text-sm font-semibold px-3 py-0  text-emerald-500 bg-green-300'>Open now</div>
@@ -49,11 +49,17 @@ const HospitalCard: React.FC<HospitalType> = ({ _id, address, availability, phot
             
             <div className='flex space-x-4'>
                 <div className='flex flex-col'>
-                    <p className="text-xs font-light">+2519000000</p>
-                    <p className='text-xs font-light'>+2519000000</p>
+                    {phoneNumbers.map( (phone: string)=>(
+                        <p className="text-xs font-light">{phone}</p>
+
+                    ))}
                 </div>
                 <div className='flex flex-col'>
-                    <p className="text-xs font-light">+info@stpaul.com</p>
+
+                    {emails.map( (phone: string)=>(
+                        <p className="text-xs font-light">{emails}</p>
+
+                    ))}
                 </div>
             </div>
         </div>

@@ -28,6 +28,10 @@ export default function Home() {
       dispatch(searchHospitals(inputRef.current?.value))
 
     }
+    else{
+      dispatch(fetchHospitals());
+
+    }
 
   };
 

@@ -17,8 +17,7 @@ export default function Home() {
   const { hospitals } = useSelector((state: RootState) => state.hospitals);
   const dispatch = useDispatch <AppDispatch>();
   
-  console.log('here')
-  console.log(hospitals)
+    
   useEffect(() => {
     dispatch(fetchHospitals());
   }, []);
@@ -67,6 +66,7 @@ export default function Home() {
                             phoneNumbers={hospital.phoneNumbers}
                             emails={hospital.emails}
                             availability={hospital.availability}
+                            institutionName={hospital.institutionName}
                             />
 
             </Link>

@@ -27,11 +27,13 @@ export interface HospitalType {
   
     phoneNumbers: string[];
     emails: string[];
+    institutionName: string;
+
   }
   
 
 
-const HospitalCard: React.FC<HospitalType> = ({ _id, address, availability, photo, phoneNumbers, emails }) => {
+const HospitalCard: React.FC<HospitalType> = ({ _id, address, availability, photo, phoneNumbers, emails, institutionName }) => {
   return (
     <div className='flex  max-w-card space-x-11 bg-card-bg shadow-md rounded-3xl'>
         <div className='max-w-cardImage shadow-md'>
@@ -41,7 +43,7 @@ const HospitalCard: React.FC<HospitalType> = ({ _id, address, availability, phot
             <div className='flex w-full  items-center'>
             <div className='flex flex-col grow'>
                 <p className='text-primary text-sm font-light'>{Object.values(address).join(", ")}</p>
-                <p className='text-2xl font-bold'>{_id}</p>
+                <p className='text-2xl font-bold'>{institutionName}</p>
                 <p className='text-sm font-light'>distance</p>
             </div>
             <div className='rounded-full max-h-6 text-sm font-semibold px-3 py-0  text-emerald-500 bg-green-300'>Open now</div>
